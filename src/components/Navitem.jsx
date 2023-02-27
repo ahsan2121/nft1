@@ -1,7 +1,7 @@
 import { Flex, Link, Menu, MenuButton, Text , Icon } from '@chakra-ui/react'
 import React from 'react'
 
-const Navitem = ({navSize , title , icon , active}) => {
+const Navitem = ({navSize , title , icon , active }) => {
   return (
     <>
         <Flex
@@ -12,19 +12,21 @@ const Navitem = ({navSize , title , icon , active}) => {
         >
             <Menu>
                 <Link
-                    backgroundColor={active && "#AEC8CA"}
+                    backgroundColor={active && "rgba(9, 105, 112, 0.288)"}
                     p={3}
                     borderRadius={8}
                     _hover={{textDecor:'none' , backgroundColor: "#AEC8CA"}}
                     w={navSize === "large" && "100%"}
+                    
                 >
                     <MenuButton w="100%">
-                        <Flex>
-                            <Icon as={icon} fontSize="xl" color={[active ? "#82AAAD" : "gray.500"] } ></Icon>
+                        <Flex align="center" >
+                            <Icon as={icon} fontSize="xl" color={[active ? "rgb(76, 17, 82)" : "White"] } ></Icon>
                             <Text ml={5} display={navSize ===  "small" ? "none" : "flex"}>{title}</Text>
                         </Flex>
                     </MenuButton>
                 </Link>
+                
             </Menu>
 
         </Flex>

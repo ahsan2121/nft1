@@ -6,19 +6,27 @@ import HomeIcon from '@mui/icons-material/Home';
 
 const Slidebar = () => {
     const [navSize , setNavSize] = useState("large")
+
+    const navStyle = {
+        backgroundImage: "linear-gradient(to bottom , rgb(175,107,181),rgb(71,104,219))",
+        // backgroundColor: "rgba(255, 255, 255, 0.12)",
+        backdropFilter: "blur(2px)",
+        boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
+        border: "2px solid rgba(10, 10, 10, 0.12)"
+    }
   return (
-    <div>
+    
         <Flex 
-            pos="sticky"
-            left="5"
-            h="95vh"
-            marginTop="2.5vh"
+            h="100vh"
+            borderRadius="20px"
             boxShadow="0 4px 12px 0 rgba(0, 0, 0, 0.05)"
-            w={navSize === "small" ? "75px" : "200px"}
-            borderRadius={navSize === "small" ? "15px" : "30px"}
+            w={navSize === "small" ? "75px" : "250px"}
+            // borderRadius={navSize === "small" ? "15px" : "30px"}
             flexDir="column"
             justifyContent="space-between"
             backdropBlur={5}
+            as="nav"
+            sx={navStyle}
         >
             <Flex
                 p="5%"
@@ -43,6 +51,9 @@ const Slidebar = () => {
                 </IconButton>
 
                 <Navitem navSize={navSize} icon={HomeIcon} title="Home" active />
+                <Navitem navSize={navSize} icon={HomeIcon} title="Marketplace"  />
+                <Navitem navSize={navSize} icon={HomeIcon} title="Sell Property"  />
+                <Navitem navSize={navSize} icon={HomeIcon} title="Get Register"  />
 
             </Flex>
 
@@ -55,7 +66,7 @@ const Slidebar = () => {
             >
                 <Divider display={navSize === "small" ? "none" : "flex"} />
                 <Flex mt={4} align="center" >
-                    <Avatar size="sm" src="https://bit.ly/code-beast"  />
+                    <Avatar size="sm" src="avatar.png"  />
                     <Flex flexDir="column" ml={4} display={navSize === "small" ? "none" : "flex"} >
                         <Heading as="h3" size="sm" >
                             Ahsan Ansar
@@ -69,7 +80,6 @@ const Slidebar = () => {
             </Flex>
             
         </Flex>
-    </div>
   )
 }
 
